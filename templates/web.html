@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI Caption Generator</title>
+  <link rel="stylesheet" type="text/css" href="static/assets/css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>AI Caption Generator</h1>
+    <!-- Navigation menu if required -->
+  </header>
+  
+  <main>
+    <section class="container">
+      <h2>Upload Image</h2>
+      <form action="gen", method="post" enctype="multipart/form-data">
+      <div class="upload-area">
+        <input type="file" id="image-upload" accept=".jpg, .jpeg, .png, .gif" name = "im">
+        <label for="image-upload" class="upload-button">Select Image</label>
+        <div id="preview" class="image-preview"></div>
+      </div>
+      <div class="option">
+        <label for="button-toggle"></label>
+        <button type="submit" style="margin: 10px;padding: 5px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;font-weight:bolder; background-color: rgb(241, 241, 241);border-color: rgb(255, 255, 255);font-size:larger;">Generate</button>
+      </div>
+      </form>
+    </section>
+    
+    <section class="container">
+      <h2>Caption Options</h2>
+      <div class="options">
+        <div class="option">
+          <label for="tone-select">Select Tone:</label>
+          <select id="tone-select">
+            <option value="funny">Funny</option>
+            <option value="serious">Serious</option>
+            <option value="formal">Formal</option>
+          </select>
+        </div>
+        
+        <div class="option">
+          <label for="summary-toggle">Summarize Caption:</label>
+          <input type="checkbox" id="summary-toggle" />
+        </div>
+        
+        <div class="option">
+          <label for="emoji-toggle">Add Emojis:</label>
+          <input type="checkbox" id="emoji-toggle" />
+        </div>
+
+        
+      </div>
+    </section>
+    
+    <section class="container">
+      <h2>Generated Caption</h2>
+      <div id="caption-result">{{note}}</div>
+    </section>
+  </main>
+  
+  <footer>
+    <p>&copy; 2023 Alamin Innovations. All rights reserved.</p>
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+</html>
